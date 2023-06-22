@@ -3,6 +3,7 @@ import {title} from "@app/strings/common";
 import {lang} from "@app/config";
 import {PropsWithChildren} from "react";
 import {Layout} from "@app/ui/layout/Layout";
+import {robotoClassName} from "@app/ui/fonts/roboto";
 
 export const metadata = {
     title,
@@ -11,7 +12,7 @@ export const metadata = {
 export default function RootLayout({children}: PropsWithChildren) {
     return (
         <html lang={lang}>
-        <body>
+        <body className={robotoClassName}>
         <Layout>
             {children}
         </Layout>

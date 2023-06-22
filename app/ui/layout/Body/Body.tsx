@@ -1,12 +1,17 @@
 import {FC} from "react";
 import styles from './Body.module.css';
+import classNames from "classnames";
 
-export const Body: FC = ({children}) => {
-    return (
-        <main className={styles['body']}>
-            <div className={styles['bodyContainer']}>
-                {children}
-            </div>
-        </main>
-    )
+type ClassName = {
+    className: string;
 };
+
+type Props = ClassName;
+
+export const Body: FC<Props> = ({children, className}) => (
+    <main className={classNames(styles['body'], className)}>
+        <div className={styles['bodyContainer']}>
+            {children}
+        </div>
+    </main>
+);

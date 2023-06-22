@@ -9,14 +9,25 @@
 }
 
 .headerContainer {
-  width: var(--content-width);
+  max-width: var(--content-width);
   margin: 0 auto;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.leftColumn {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  flex-grow: 1;
 }
 
 .leftColumn {
 
 }
 
-.leftRight {
-
+.logo {
+  font-size: 32px;
+  font-weight: 700;
 }

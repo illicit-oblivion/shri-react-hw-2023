@@ -1,4 +1,7 @@
 :root {
   --contrast-background: #333;
   --contrast-color: #fff;
+  --background: #f5f5f5;
+  --primary: #ff5500;
+  --primary-dimmed: #ffa375;
 }

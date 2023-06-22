@@ -9,14 +9,17 @@
 }
 
 .footerContainer {
-  width: var(--content-width);
+  max-width: var(--content-width);
   margin: 0 auto;
+  height: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .leftColumn {
-
+  flex-grow: 1;
 }
 
-.leftRight {
+.rightColumn {
 
 }

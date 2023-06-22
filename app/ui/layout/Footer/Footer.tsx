@@ -10,7 +10,7 @@ export const Footer: FC = () => {
                 <div className={styles['leftColumn']}>
                     <a href="/qna">{qna}</a>
                 </div>
-                <div className={styles['leftColumn']}>
+                <div className={styles['rightColumn']}>
                     <a href="/about">{aboutUs}</a>
                 </div>
             </div>
