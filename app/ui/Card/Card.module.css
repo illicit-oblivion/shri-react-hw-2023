@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  padding: 24px;
+  border-radius: 8px;
+  gap: 24px;
+  background: #fff;
+}
+
+.cardImage {
+  border-radius: 8px;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  flex-shrink: 0;
+}

@@ -2,15 +2,16 @@
 
 import {FC} from "react";
 import styles from './TicketCard.module.css';
+import cardStyles from '@app/ui/Card/Card.module.css';
 import Image from "next/image";
-import {moviePoster} from "@app/strings/common";
+import {moviePoster} from "@app/strings";
 import {maxOrder} from "@app/config";
 import Plus from '@app/ui/icons/plus.svg';
 import Minus from '@app/ui/icons/minus.svg';
 
 type Props = {
     title: string;
-    description: number;
+    description: string;
     imageUrl: string;
     count: number;
     onAddClick: () => void;
@@ -21,7 +22,7 @@ export const TicketCard: FC<Props> = (props) => {
     const subtractDisabled = !props.count;
     const addDisabled = props.count >= maxOrder;
     return (
-        <div className={styles['card']}>
+        <div className={cardStyles['card']}>
             <div className={styles['posterContainer']}>
                 <Image src={props.imageUrl} alt={moviePoster} fill sizes="100ww"/>
             </div>

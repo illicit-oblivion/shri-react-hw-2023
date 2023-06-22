@@ -1,6 +1,6 @@
 import {FC} from "react";
 import styles from './Footer.module.css';
-import {aboutUs, qna} from "@app/strings/common";
+import {aboutUs, qna} from "@app/strings";
 
 
 export const Footer: FC = () => {

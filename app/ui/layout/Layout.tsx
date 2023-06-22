@@ -1,6 +1,6 @@
 import '../../globals.css';
-import {title} from "@app/strings/common";
-import {FC, ReactNode} from "react";
+import {title} from "@app/strings";
+import {FC, PropsWithChildren} from "react";
 import {Header} from "@app/ui/layout/Header/Header";
 import {Body} from "@app/ui/layout/Body/Body";
 import {Footer} from "@app/ui/layout/Footer/Footer";
@@ -11,11 +11,7 @@ export const metadata = {
     title,
 };
 
-type Props = {
-    children: ReactNode
-};
-
-export const Layout: FC = ({children}: Props) => {
+export const Layout: FC<PropsWithChildren> = ({children}) => {
     return (
         <div className={styles['layout']}>
             <Header/>

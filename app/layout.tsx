@@ -1,5 +1,5 @@
 import './globals.css'
-import {title} from "@app/strings/common";
+import {title} from "@app/strings";
 import {lang} from "@app/config";
 import {PropsWithChildren} from "react";
 import {Layout} from "@app/ui/layout/Layout";

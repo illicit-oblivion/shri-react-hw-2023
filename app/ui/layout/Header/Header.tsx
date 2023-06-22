@@ -2,7 +2,7 @@ import {FC} from "react";
 import styles from './Header.module.css';
 import Cart from '@app/ui/icons/cart.svg';
 
-import {title} from "@app/strings/common";
+import {title} from "@app/strings";
 
 export const Header: FC = () => {
     return (

@@ -1,17 +1,6 @@
-.card {
-  display: flex;
-  padding: 24px;
-  border-radius: 8px;
-  gap: 24px;
-  background: #fff;
-}
-
 .posterContainer {
-  border-radius: 8px;
-  width: 100px;
+  composes: cardImage from '../Card/Card.module.css';
   height: 120px;
-  position: relative;
-  flex-shrink: 0;
 }
 
 .textContainer {

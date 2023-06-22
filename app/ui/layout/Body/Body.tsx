@@ -1,12 +1,9 @@
-import {FC} from "react";
+import {FC, PropsWithChildren} from "react";
 import styles from './Body.module.css';
 import classNames from "classnames";
+import {ClassName} from "@app/ui/utils";
 
-type ClassName = {
-    className: string;
-};
-
-type Props = ClassName;
+type Props = PropsWithChildren<ClassName>;
 
 export const Body: FC<Props> = ({children, className}) => (
     <main className={classNames(styles['body'], className)}>

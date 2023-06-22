@@ -1,8 +1,7 @@
-.header {
-
+.body {
 }
 
 .bodyContainer {
   max-width: var(--content-width);
-  margin: 0 auto;
+  margin: var(--margin-4) auto;
 }

@@ -1,0 +1,25 @@
+.posterContainer {
+  composes: cardImage from '../Card/Card.module.css';
+  height: 100px;
+}
+
+.textContainer {
+  flex-grow: 1;
+}
+
+.header {
+  font-size: var(--font-size-2);
+  line-height: 32px;
+  margin-bottom: var(--margin-3);
+  display: flex;
+}
+
+.title {
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.description {
+  font-size: var(--font-size-1);
+  line-height: 24px;
+}
