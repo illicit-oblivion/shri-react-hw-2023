@@ -1,0 +1,48 @@
+.posterContainer {
+  composes: cardImage from '../Card/Card.module.css';
+  height: 120px;
+}
+
+.textContainer {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: var(--font-size-2);
+  line-height: 1;
+  font-weight: 600;
+  margin-bottom: var(--margin-2);
+}
+
+.description {
+  font-size: var(--font-size-1);
+  line-height: 1.25;
+  font-style: italic;
+}
+
+.counterContainer {
+  display: flex;
+  gap: var(--margin-2);
+  --height: 20px;
+  height: var(--height);
+  align-items: center;
+}
+
+.addButton,
+.subtractButton {
+  background: var(--primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--height);;
+  height: var(--height);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+
+.addButton:disabled,
+.subtractButton:disabled {
+  background: var(--primary-dimmed);
+}
