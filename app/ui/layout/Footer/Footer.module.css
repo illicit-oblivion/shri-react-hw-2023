@@ -1,0 +1,22 @@
+.footer {
+  height: 86px;
+  background: var(--contrast-background);
+  color: var(--contrast-color);
+}
+
+.footer a {
+  color: var(--contrast-color);
+}
+
+.footerContainer {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+.leftColumn {
+
+}
+
+.leftRight {
+
+}

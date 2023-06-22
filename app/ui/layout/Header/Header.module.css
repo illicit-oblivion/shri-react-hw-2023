@@ -1,0 +1,22 @@
+.header {
+  height: 84px;
+  background: var(--contrast-background);
+  color: var(--contrast-color);
+}
+
+.header a {
+  color: var(--contrast-color);
+}
+
+.headerContainer {
+  width: var(--content-width);
+  margin: 0 auto;
+}
+
+.leftColumn {
+
+}
+
+.leftRight {
+
+}
