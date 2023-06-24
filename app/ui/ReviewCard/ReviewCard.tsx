@@ -15,7 +15,7 @@ type Props = {
 }
 
 export const ReviewCard: FC<Props> = (props) => {
-    const ratingText = rating.replace(':num', props.rating.toString());
+    const ratingText = rating + ': ' + props.rating;
 
     return (
         <div className={cardStyles['card']}>

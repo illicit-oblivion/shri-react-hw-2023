@@ -1,5 +1,5 @@
 import {FC} from "react";
-import styles from "@app/ui/TicketCard/TicketCard.module.css";
+import styles from "./Counter.module.css";
 import Minus from "@app/ui/icons/minus.svg";
 import Plus from "@app/ui/icons/plus.svg";
 import {maxOrder} from "@app/config";
@@ -14,7 +14,7 @@ export const Counter: FC<CounterProps> = (props) => {
     const subtractDisabled = !props.count;
     const addDisabled = props.count >= maxOrder;
     return (
-        <div className={styles['counterContainer']}>
+        <div className={styles['counter']}>
             <button
                 className={styles['subtractButton']}
                 onClick={props.onSubtractClick}

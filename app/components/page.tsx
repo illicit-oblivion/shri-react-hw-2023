@@ -3,14 +3,29 @@
 import {TicketCard} from "@app/ui/TicketCard/TicketCard";
 import {rows} from "@app/ui/utils";
 import {ReviewCard} from "@app/ui/ReviewCard/ReviewCard";
+import {MovieCard} from "@app/ui/MovieCard/MovieCard";
 
 export default function Components() {
     return (
         <div className={rows}>
+            <MovieCard
+                imageUrl="/poster.png"
+                title="Властелин колец: Братство кольца"
+                genre="Фэнтези"
+                releaseYear={2001}
+                rating={8}
+                director="Питер Джексон"
+                description="Сказания о Средиземье — это хроника Великой войны за Кольцо, длившейся не одну тысячу лет. Тот, кто владел Кольцом, получал неограниченную власть, но был обязан служить злу. Тихая деревня, где живут хоббиты. Придя на 111-й день рождения к своему старому другу Бильбо Бэггинсу, волшебник Гэндальф начинает вести разговор о кольце, которое Бильбо нашел много лет назад. Это кольцо принадлежало когда-то темному властителю Средиземья Саурону, и оно дает большую власть своему обладателю. Теперь Саурон хочет вернуть себе власть над Средиземьем. Бильбо отдает Кольцо племяннику Фродо, чтобы тот отнёс его к Роковой Горе и уничтожил."
+                count={5}
+                onAddClick={() => {
+                }}
+                onSubtractClick={() => {
+                }}
+            />
             <TicketCard
                 imageUrl="/poster.png"
                 title="Властелин колец: Братство кольца"
-                description="Фэнтези"
+                genre="Фэнтези"
                 count={5}
                 onAddClick={() => {
                 }}

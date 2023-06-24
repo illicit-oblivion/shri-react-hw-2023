@@ -6,14 +6,11 @@ import cardStyles from '@app/ui/Card/Card.module.css';
 import Image from "next/image";
 import {moviePoster} from "@app/strings";
 import {Counter, CounterProps} from "@app/ui/Counter/Counter";
+import {MovieFields} from "@app/types/MovieFields";
 
-type Props = {
-    title: string;
-    description: string;
-    imageUrl: string;
-} & CounterProps;
+type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl'> & CounterProps;
 
-export const TicketCard: FC<Props> = ({title, description, imageUrl, ...props}) => {
+export const TicketCard: FC<Props> = ({title, genre, imageUrl, ...props}) => {
     return (
         <div className={cardStyles['card']}>
             <div className={styles['posterContainer']}>
@@ -21,7 +18,7 @@ export const TicketCard: FC<Props> = ({title, description, imageUrl, ...props}) 
             </div>
             <div className={styles['textContainer']}>
                 <div className={styles['title']}>{title}</div>
-                <div className={styles['description']}>{description}</div>
+                <div className={styles['description']}>{genre}</div>
             </div>
             <Counter {...props} />
         </div>
