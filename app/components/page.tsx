@@ -35,6 +35,8 @@ export default function Components() {
                 }}
                 onSubtractClick={() => {
                 }}
+                onDeleteButtonClick={() => {
+                }}
             />
             <ReviewCard
                 name="Роман"
