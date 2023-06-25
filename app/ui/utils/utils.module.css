@@ -5,7 +5,25 @@
   gap: var(--margin-4);
 }
 
-
 .smallRows {
   gap: var(--margin-3);
+}
+
+.cols,
+.smallCols {
+  display: flex;
+  gap: var(--margin-4);
+}
+
+.smallCols {
+  gap: var(--margin-3);
+}
+
+.button {
+  border: 0;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

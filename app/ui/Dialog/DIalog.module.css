@@ -1,0 +1,45 @@
+.overlay {
+  background: var(--content-background);
+  padding: var(--margin-4);
+  border-radius: var(--border-radius);
+  top: 50%;
+  left: 50%;
+  border: 0;
+}
+
+.overlay::backdrop {
+  background: rgba(0, 0, 0, .5);
+}
+
+.header {
+  display: flex;
+}
+
+.title {
+  flex-grow: 1;
+  line-height: 1;
+  font-size: var(--font-size-2);
+  font-weight: 600;
+  margin-bottom: var(--margin-3);
+}
+
+.text {
+  line-height: 20px;
+}
+
+.closeButton {
+  composes: button from '@app/ui/utils/utils.module.css';
+  width: 16px;
+  height: 16px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.footer {
+  margin-top: var(--margin-4);
+}

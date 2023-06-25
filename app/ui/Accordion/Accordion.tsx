@@ -1,7 +1,7 @@
 import {FC, MouseEventHandler, useEffect, useRef, useState} from "react";
 import styles from './Accordion.module.css';
-import AccordionIcon from '@app/ui/icons/accordion.svg';
 import classNames from "classnames";
+import {AccordionIcon} from "@app/ui/icons";
 
 type Props = {
     title: string;

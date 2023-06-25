@@ -1,8 +1,8 @@
 import {FC} from "react";
 import styles from './Header.module.css';
-import Cart from '@app/ui/icons/cart.svg';
 
 import {title} from "@app/strings";
+import {Cart} from "@app/ui/icons";
 
 export const Header: FC = () => {
     return (

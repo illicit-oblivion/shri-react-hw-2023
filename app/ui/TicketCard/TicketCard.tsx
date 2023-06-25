@@ -7,7 +7,7 @@ import Image from "next/image";
 import {moviePoster} from "@app/strings";
 import {Counter, CounterProps} from "@app/ui/Counter/Counter";
 import {MovieFields} from "@app/types/MovieFields";
-import CloseIcon from "@app/ui/icons/close.svg";
+import {CloseIcon} from "@app/ui/icons";
 
 type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl'> & CounterProps & {
     onDeleteButtonClick?: () => void;

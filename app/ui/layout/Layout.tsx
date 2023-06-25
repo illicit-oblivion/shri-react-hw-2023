@@ -13,12 +13,14 @@ export const metadata = {
 
 export const Layout: FC<PropsWithChildren> = ({children}) => {
     return (
-        <div className={styles['layout']}>
-            <Header/>
-            <Body className={styles['layoutBody']}>
-                {children}
-            </Body>
-            <Footer/>
-        </div>
+        <>
+            <div className={styles['layout']}>
+                <Header/>
+                <Body className={styles['layoutBody']}>
+                    {children}
+                </Body>
+                <Footer/>
+            </div>
+        </>
     )
 };

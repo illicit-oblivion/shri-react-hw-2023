@@ -15,7 +15,7 @@
   justify-content: center;
   width: var(--height);;
   height: var(--height);
-  color: #fff;
+  color: var(--contrast-color);
   border: 0;
   cursor: pointer;
 }
