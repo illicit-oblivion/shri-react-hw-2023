@@ -1,9 +1,13 @@
-.card {
-  display: flex;
+.card,
+.cardColumns {
   padding: 24px;
   border-radius: 8px;
-  gap: 24px;
   background: #fff;
+}
+
+.cardColumns {
+  display: flex;
+  gap: 24px;
 }
 
 .cardImage {

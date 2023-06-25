@@ -1,0 +1,9 @@
+.title {
+  font-size: var(--font-size-4);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.title:not(:last-child) {
+  margin-bottom: var(--margin-4);
+}

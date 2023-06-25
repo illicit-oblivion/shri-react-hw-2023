@@ -14,7 +14,7 @@ export const Header: FC = () => {
                     </a>
                 </div>
                 <div className={styles['rightColumn']}>
-                    <a href="/"><Cart width={28}/></a>
+                    <a href="/" className={styles['cartContainer']}><span className={styles['cartCounter']}>6</span><Cart width={32}/></a>
                 </div>
             </div>
         </header>

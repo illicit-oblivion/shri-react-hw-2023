@@ -14,10 +14,6 @@
 
 .title {
   flex-grow: 1;
-  font-size: var(--font-size-3);
-  line-height: 1;
-  font-weight: 600;
-  margin-bottom: var(--margin-4);
 }
 
 .fields dl {

@@ -1,0 +1,47 @@
+.accordion {
+  composes: card from '@app/ui/Card/Card.module.css';
+
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+.icon :global .accordion_svg__arrow {
+  transform-origin: 50% 50%;
+  transition: .3s transform;
+  transform: rotate(0deg);
+}
+
+.open .icon :global .accordion_svg__arrow {
+  transform: rotate(180deg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-size-3);
+  line-height: 32px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.text {
+  line-height: 1.5;
+  font-size: var(--font-size-1);
+  cursor: default;
+  overflow: hidden;
+  height: 0;
+  transition: .3s height;
+}
+
+.textInner {
+  padding-top: var(--margin-3);
+}
+
+.open .text {
+  height: var(--height);
+}

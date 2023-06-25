@@ -1,5 +1,11 @@
-.rows {
+.rows,
+.smallRows {
   display: flex;
   flex-direction: column;
   gap: var(--margin-4);
+}
+
+
+.smallRows {
+  gap: var(--margin-3);
 }

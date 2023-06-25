@@ -12,7 +12,7 @@ type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl'> & CounterProps;
 
 export const TicketCard: FC<Props> = ({title, genre, imageUrl, ...props}) => {
     return (
-        <div className={cardStyles['card']}>
+        <div className={cardStyles['cardColumns']}>
             <div className={styles['posterContainer']}>
                 <Image src={imageUrl} alt={moviePoster} fill sizes="100ww"/>
             </div>

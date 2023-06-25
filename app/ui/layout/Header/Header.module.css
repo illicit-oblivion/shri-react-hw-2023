@@ -31,3 +31,23 @@
   font-size: 32px;
   font-weight: 700;
 }
+
+.cartContainer {
+  display: flex;
+  align-items: center;
+}
+
+.cartCounter {
+  margin-right: var(--margin-2);
+  height: 28px;
+  min-width: 28px;
+  padding: 4px 6px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-0);
+  font-weight: 600;
+}

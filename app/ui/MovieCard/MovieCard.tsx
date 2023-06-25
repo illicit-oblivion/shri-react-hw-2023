@@ -7,6 +7,7 @@ import Image from "next/image";
 import {description, director, genre, moviePoster, rating, releaseYear} from "@app/strings";
 import {Counter, CounterProps} from "@app/ui/Counter/Counter";
 import {MovieFields} from "@app/types/MovieFields";
+import {Title} from "@app/ui/Title/Title";
 
 type Props = MovieFields & CounterProps;
 
@@ -17,16 +18,18 @@ const fields = {
     director,
 }
 
+type Field = keyof typeof fields;
+
 export const MovieCard: FC<Props> = ({count, onSubtractClick, onAddClick, ...props}) => {
     const counterProps = {count, onSubtractClick, onAddClick};
     return (
-        <div className={cardStyles['card']}>
+        <div className={cardStyles['cardColumns']}>
             <div className={styles['posterContainer']}>
-                <Image src={props.imageUrl} alt={moviePoster} fill sizes="100ww"/>
+                <Image src={props.imageUrl} alt={moviePoster} fill sizes="100ww" priority/>
             </div>
             <div className={styles['rightColumn']}>
                 <div className={styles['header']}>
-                    <h1 className={styles['title']}>{props.title}</h1>
+                    <Title className={styles['title']}>{props.title}</Title>
                     <Counter {...counterProps}/>
                 </div>
                 <dl className={styles['fields']}>
@@ -34,7 +37,7 @@ export const MovieCard: FC<Props> = ({count, onSubtractClick, onAddClick, ...pro
                         return (
                             <Fragment key={field}>
                                 <dt>{field}:</dt>
-                                <dd>{props[prop]}</dd>
+                                <dd>{props[prop as Field]}</dd>
                             </Fragment>
                         );
                     })}

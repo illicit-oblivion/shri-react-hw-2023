@@ -18,7 +18,7 @@ export const ReviewCard: FC<Props> = (props) => {
     const ratingText = rating + ': ' + props.rating;
 
     return (
-        <div className={cardStyles['card']}>
+        <div className={cardStyles['cardColumns']}>
             <div className={cardStyles['cardImage']}>
                 <Image src={props.imageUrl ?? defaultAvatar} alt={avatar} fill sizes="100ww"/>
             </div>
