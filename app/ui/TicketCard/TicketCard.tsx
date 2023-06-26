@@ -5,17 +5,16 @@ import styles from './TicketCard.module.css';
 import cardStyles from '@app/ui/Card/Card.module.css';
 import Image from "next/image";
 import {moviePoster} from "@app/strings";
-import {Counter, CounterProps} from "@app/ui/Counter/Counter";
+import {Counter} from "@app/ui/Counter/Counter";
 import {MovieFields} from "@app/types/MovieFields";
 import {CloseIcon} from "@app/ui/icons";
 import Link from "next/link";
 
-type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl'> & CounterProps & {
+type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl' | 'id'> & {
     onDeleteButtonClick?: () => void;
-    id: string;
 };
 
-export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButtonClick, ...props}) => {
+export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButtonClick}) => {
     return (
         <div className={cardStyles['cardColumns']}>
             <Link passHref href={`/${id}`} className={styles['posterContainer']}>
@@ -25,7 +24,7 @@ export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButto
                 <Link href={`/${id}`} className={styles['title']}>{title}</Link>
                 <div className={styles['description']}>{genre}</div>
             </div>
-            <Counter {...props} />
+            <Counter id={id} />
             {onDeleteButtonClick && (
                 <button className={styles['deleteButton']} onClick={onDeleteButtonClick}>
                     <CloseIcon width={12.5} height={12.5}/>

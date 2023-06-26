@@ -6,7 +6,8 @@ import {Movie} from "@app/api/types";
 import {genre} from "@app/helpers/translations";
 
 export default async function MoviesPage() {
-    const movies = await getMovies()
+    const movies = await getMovies();
+
     return (
         <div className={rows}>
             {movies?.map((it) =>
@@ -16,11 +17,6 @@ export default async function MoviesPage() {
                     imageUrl={it.posterUrl}
                     title={it.title}
                     genre={genre[it.genre]}
-                    count={5}
-                    onAddClick={() => {
-                    }}
-                    onSubtractClick={() => {
-                    }}
                 />
             )}
         </div>

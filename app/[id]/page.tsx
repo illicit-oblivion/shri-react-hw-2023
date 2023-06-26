@@ -18,6 +18,7 @@ export default async function MoviePage({params}: { params: { id: string } }) {
     return (
         <div className={rows}>
             <MovieCard
+                id={movie.id}
                 imageUrl={movie.posterUrl}
                 title={movie.title}
                 genre={genre[movie.genre]}
@@ -25,11 +26,6 @@ export default async function MoviePage({params}: { params: { id: string } }) {
                 rating={movie.rating}
                 director={movie.director}
                 description={movie.description}
-                count={5}
-                onAddClick={() => {
-                }}
-                onSubtractClick={() => {
-                }}
             />
             <Suspense fallback={<div>Loading...</div>}>
               <ReviewsList promise={reviewsPromise} />
