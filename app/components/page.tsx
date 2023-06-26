@@ -50,6 +50,7 @@ export default function Components() {
                     }}
                 />
                 <TicketCard
+                    id={'1'}
                     imageUrl="/poster.png"
                     title="Властелин колец: Братство кольца"
                     genre="Фэнтези"

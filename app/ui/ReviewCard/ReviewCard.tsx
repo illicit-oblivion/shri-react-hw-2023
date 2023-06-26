@@ -1,5 +1,3 @@
-'use client';
-
 import {FC} from "react";
 import styles from './ReviewCard.module.css';
 import cardStyles from '@app/ui/Card/Card.module.css';

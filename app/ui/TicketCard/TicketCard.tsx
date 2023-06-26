@@ -8,19 +8,21 @@ import {moviePoster} from "@app/strings";
 import {Counter, CounterProps} from "@app/ui/Counter/Counter";
 import {MovieFields} from "@app/types/MovieFields";
 import {CloseIcon} from "@app/ui/icons";
+import Link from "next/link";
 
 type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl'> & CounterProps & {
     onDeleteButtonClick?: () => void;
+    id: string;
 };
 
-export const TicketCard: FC<Props> = ({title, genre, imageUrl, onDeleteButtonClick, ...props}) => {
+export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButtonClick, ...props}) => {
     return (
         <div className={cardStyles['cardColumns']}>
-            <div className={styles['posterContainer']}>
+            <Link passHref href={`/${id}`} className={styles['posterContainer']}>
                 <Image src={imageUrl} alt={moviePoster} fill sizes="100ww"/>
-            </div>
+            </Link>
             <div className={styles['textContainer']}>
-                <div className={styles['title']}>{title}</div>
+                <Link href={`/${id}`} className={styles['title']}>{title}</Link>
                 <div className={styles['description']}>{genre}</div>
             </div>
             <Counter {...props} />

@@ -1,6 +1,8 @@
 .posterContainer {
   composes: cardImage from '../Card/Card.module.css';
   height: 120px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .textContainer {

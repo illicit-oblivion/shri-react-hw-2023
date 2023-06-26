@@ -2,6 +2,8 @@
   composes: cardImage from '../Card/Card.module.css';
   width: 400px;
   height: 500px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .rightColumn {
