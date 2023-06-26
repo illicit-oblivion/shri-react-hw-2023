@@ -5,6 +5,10 @@
   overflow: hidden;
 }
 
+.poster {
+  object-fit: cover;
+}
+
 .textContainer {
   flex-grow: 1;
 }

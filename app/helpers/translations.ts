@@ -1,6 +1,6 @@
 import {Genre} from "@app/api/types";
 
-export const genre: Record<Genre, string> = {
+export const genreTranslations: Record<Genre, string> = {
     'fantasy' : 'Фэнтези',
     'horror': 'Фильм ужасов',
     'action': "Боевик",

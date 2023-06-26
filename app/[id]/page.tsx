@@ -1,9 +1,7 @@
-'use client';
-
 import {Movie, Review} from "@app/api/types";
 import {MovieCard} from "@app/ui/MovieCard/MovieCard";
 import {Suspense} from "react";
-import {genre} from "@app/helpers/translations";
+import {genreTranslations} from "@app/helpers/translations";
 import {ReviewsList} from "@app/ui/ReviewsList/ReviewsList";
 import {rows} from "@app/ui/utils";
 
@@ -21,7 +19,7 @@ export default async function MoviePage({params}: { params: { id: string } }) {
                 id={movie.id}
                 imageUrl={movie.posterUrl}
                 title={movie.title}
-                genre={genre[movie.genre]}
+                genre={genreTranslations[movie.genre]}
                 releaseYear={movie.releaseYear}
                 rating={movie.rating}
                 director={movie.director}

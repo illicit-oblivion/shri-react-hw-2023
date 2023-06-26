@@ -18,7 +18,7 @@ export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButto
     return (
         <div className={cardStyles['cardColumns']}>
             <Link passHref href={`/${id}`} className={styles['posterContainer']}>
-                <Image src={imageUrl} alt={moviePoster} fill sizes="100ww"/>
+                <Image fetchPriority={'high'} className={styles['poster']} src={imageUrl} alt={moviePoster} fill sizes="100ww"/>
             </Link>
             <div className={styles['textContainer']}>
                 <Link href={`/${id}`} className={styles['title']}>{title}</Link>

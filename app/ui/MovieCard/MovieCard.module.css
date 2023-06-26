@@ -6,6 +6,10 @@
   overflow: hidden;
 }
 
+.poster {
+  object-fit: cover;
+}
+
 .rightColumn {
   flex-grow: 1;
 }

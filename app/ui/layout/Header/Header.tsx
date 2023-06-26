@@ -26,7 +26,7 @@ export const Header: FC = () => {
                 </div>
                 <div className={styles['rightColumn']}>
                     <Link passHref href={NAVIGATION.cart} className={styles['cartContainer']}>
-                        <span className={styles['cartCounter']}>{totalAmount}</span>
+                        {totalAmount!==0 && <span className={styles['cartCounter']}>{totalAmount}</span>}
                         <Cart width={32}/>
                     </Link>
                 </div>

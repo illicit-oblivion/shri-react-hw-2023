@@ -22,7 +22,7 @@ export const MovieCard: FC<MovieFields> = ({ ...props}) => {
     return (
         <div className={cardStyles['cardColumns']}>
             <div className={styles['posterContainer']}>
-                <Image src={props.imageUrl} alt={moviePoster} fill sizes="100ww" priority/>
+                <Image fetchPriority={'high'} quality={90} className={styles['poster']} src={props.imageUrl} alt={moviePoster} fill sizes="100ww" priority/>
             </div>
             <div className={styles['rightColumn']}>
                 <div className={styles['header']}>
