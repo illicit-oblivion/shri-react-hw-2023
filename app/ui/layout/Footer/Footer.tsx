@@ -1,6 +1,8 @@
 import {FC} from "react";
 import styles from './Footer.module.css';
 import {aboutUs, qna} from "@app/strings";
+import Link from "next/link";
+import {NAVIGATION} from "@app/navigation";
 
 
 export const Footer: FC = () => {
@@ -8,10 +10,10 @@ export const Footer: FC = () => {
         <footer className={styles['footer']}>
             <div className={styles['footerContainer']}>
                 <div className={styles['leftColumn']}>
-                    <a href="/qna">{qna}</a>
+                    <Link href={NAVIGATION.qna}>{qna}</Link>
                 </div>
                 <div className={styles['rightColumn']}>
-                    <a href="/about">{aboutUs}</a>
+                    <Link href={NAVIGATION.about}>{aboutUs}</Link>
                 </div>
             </div>
         </footer>
