@@ -1,3 +1,5 @@
+'use client';
+
 import {FC, MouseEventHandler, useEffect, useRef, useState} from "react";
 import styles from './Accordion.module.css';
 import classNames from "classnames";
