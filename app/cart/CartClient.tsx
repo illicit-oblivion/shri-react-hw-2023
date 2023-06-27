@@ -24,27 +24,27 @@ export const CartClient: FC<Props> = ({movies}) => {
     )
 
     movies = movies.filter(movie => ticketIds.includes(movie.id))
-    const [openModal, setOpenModal] = useState(false);
+    const [openModal, setOpenModal] = useState('');
 
-    const onDeleteButtonClick = () => {
-        setOpenModal(true);
+    const onDeleteButtonClick = (id: string) => {
+        setOpenModal(id);
     };
     const closeModal = () => setOpenModal(false);
 
     return (
         <div className={rows}>
             <Dialog
-                open={openModal}
+                open={!!openModal}
                 onClose={closeModal}
                 title="Удаление билета"
                 text="Вы уверены, что хотите удалить билет?"
                 footer={() => (
                     <div className={smallCols}>
-                        <Button onClick={closeModal} primary>Да</Button>
                         <Button onClick={() => {
-                            dispatch(cartActions.reset())
                             closeModal();
-                        }}>Нет</Button>
+                            dispatch(cartActions.reset(openModal));
+                        }} primary>Да</Button>
+                        <Button onClick={closeModal}>Нет</Button>
                     </div>
                 )}
             />

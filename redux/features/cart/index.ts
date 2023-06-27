@@ -23,7 +23,10 @@ export const cartSlice = createSlice({
 
             state[payload] = count - 1;
         },
-        reset: () => initialState,
+        reset: (state,  {payload}: PayloadAction<string>) => {
+            console.log(state, payload);
+            delete state[payload];
+        },
     }
 })
 

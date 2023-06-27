@@ -11,7 +11,7 @@ import {CloseIcon} from "@app/ui/icons";
 import Link from "next/link";
 
 type Props = Pick<MovieFields, 'title' | 'genre' | 'imageUrl' | 'id'> & {
-    onDeleteButtonClick?: () => void;
+    onDeleteButtonClick?: (id: string) => void;
 };
 
 export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButtonClick}) => {
@@ -26,7 +26,7 @@ export const TicketCard: FC<Props> = ({title, genre, imageUrl, id, onDeleteButto
             </div>
             <Counter id={id} />
             {onDeleteButtonClick && (
-                <button className={styles['deleteButton']} onClick={onDeleteButtonClick}>
+                <button className={styles['deleteButton']} onClick={() => onDeleteButtonClick?.(id)}>
                     <CloseIcon width={12.5} height={12.5}/>
                 </button>
             )}
