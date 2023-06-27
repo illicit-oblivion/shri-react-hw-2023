@@ -1,0 +1,10 @@
+.left-column {
+    flex: 1;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 10px;
+}
+
+.right-column {
+    flex: 2;
+}

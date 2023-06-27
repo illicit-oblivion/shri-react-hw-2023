@@ -1,24 +1,30 @@
-'use client';
-
 import {TicketCard} from "@app/ui/TicketCard/TicketCard";
-import {rows} from "@app/ui/utils";
+import {rows, smallCols} from "@app/ui/utils";
 import {Movie} from "@app/api/types";
-import {genre} from "@app/helpers/translations";
+import {genreTranslations} from "@app/helpers/translations";
+import {Filters} from "@app/ui/Filters/Filters";
+import styles from './page.module.css'
+import classNames from "classnames";
 
 export default async function MoviesPage() {
     const movies = await getMovies();
 
     return (
-        <div className={rows}>
-            {movies?.map((it) =>
-                <TicketCard
-                    id={it.id}
-                    key={it.id}
-                    imageUrl={it.posterUrl}
-                    title={it.title}
-                    genre={genre[it.genre]}
-                />
-            )}
+        <div className={smallCols}>
+            <div className={styles['left-column']}>
+                <Filters />
+            </div>
+            <div className={classNames(rows, styles['right-column'])}>
+                {movies?.map((it) =>
+                    <TicketCard
+                        id={it.id}
+                        key={it.id}
+                        imageUrl={it.posterUrl}
+                        title={it.title}
+                        genre={genreTranslations[it.genre]}
+                    />
+                )}
+            </div>
         </div>
     )
 }
