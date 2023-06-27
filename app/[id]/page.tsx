@@ -4,6 +4,7 @@ import {Suspense} from "react";
 import {genreTranslations} from "@app/helpers/translations";
 import {ReviewsList} from "@app/ui/ReviewsList/ReviewsList";
 import {rows} from "@app/ui/utils";
+import {uniqueArrayByField} from "@app/utils/uniqueArrayByField";
 
 export default async function MoviePage({params}: { params: { id: string } }) {
 
@@ -43,11 +44,13 @@ async function getMovie(movieId: string): Promise<Movie> {
 }
 
 async function getReviews(movieId: string): Promise<Review[]> {
-    const res = await fetch(`http://localhost:3001/api/reviews?movieId=${movieId}`)
+    const res = await fetch(`http://localhost:3001/api/reviews?movieId=${movieId}`);
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
     }
 
-    return res.json()
+    const arr: Review[] = await res.json();
+    uniqueArrayByField(arr, 'id')
+    return arr;
 }
