@@ -16,7 +16,7 @@ export default function RootLayout({children}: PropsWithChildren) {
         <body className={robotoClassName}>
         <StoreProvider>
             <div
-                id="portal-selectors"
+                id="portal"
                 style={{ zIndex: 1, position: 'fixed' }}
             ></div>
             <Layout>

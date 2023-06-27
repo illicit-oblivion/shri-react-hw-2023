@@ -1,16 +1,19 @@
 'use client';
-import {ReactNode, useEffect, useRef, useState} from 'react';
-import styles from './Dropdown.module.css';
-import { createPortal } from 'react-dom';
-import DropdownIcon from "@app/ui/icons/dropdown.svg";
 
-interface DropdownProps {
+import DropdownIcon from "@app/ui/icons/accordion.svg";
+import {FC, ReactNode, useEffect, useRef, useState} from 'react';
+import styles from './Dropdown.module.css';
+import {createPortal} from 'react-dom';
+
+type Option = {
+  id?: string;
+  name: string;
+};
+
+interface Props {
   label: string;
   defaultText: string;
-  options: {
-    id?: string;
-    name: string;
-  }[];
+  options: Option[];
   onChange: (value: string) => void;
 }
 
@@ -20,13 +23,13 @@ const DropdownContainer = ({ children }: { children: ReactNode }) => {
   return createPortal(children, portalContainer);
 };
 
-export default function Dropdown({
+export const Dropdown: FC<Props> = ({
   label,
   defaultText,
   options,
   onChange,
-}: DropdownProps) {
-  const dropdownSelectRef = useRef<HTMLDivElement>(null);
+}: Props) => {
+  const selectRef = useRef<HTMLDivElement | null>(null);
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedValue, setSelectedValue] = useState('');
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -58,14 +61,14 @@ export default function Dropdown({
   };
 
   return (
-    <div className={styles['dropdown']} ref={dropdownSelectRef}>
-      <label className={styles['dropdown__label']}>{label}</label>
+    <div className={styles['dropdown']} ref={selectRef}>
+      <label className={styles['label']}>{label}</label>
       <div
         className={
-          styles['dropdown__selector'] +
-          (isOpen ? ' ' + styles['dropdown__selector_active'] : '') +
+          styles['selector'] +
+          (isOpen ? ' ' + styles['selectorActive'] : '') +
           (selectedOption === ''
-            ? ' ' + styles['dropdown__selector_default']
+            ? ' ' + styles['selectorDefault']
             : '')
         }
         onClick={handleOpenList}
@@ -73,38 +76,40 @@ export default function Dropdown({
         {selectedValue !== '' ? selectedValue : defaultText}
 
         <DropdownIcon
+          width={20}
+          height={20}
           className={
-            styles['dropdown__selector-icon'] +
-            (isOpen ? ' ' + styles['dropdown__selector-icon_active'] : '')
+            styles['icon'] +
+            (isOpen ? ' ' + styles['iconActive'] : '')
           }
         />
       </div>
-      {isOpen && dropdownSelectRef.current && (
+      {isOpen && selectRef.current && (
         <DropdownContainer>
           <ul
-            className={styles['dropdown__options']}
+            className={styles['options']}
             style={{
               top:
-                dropdownSelectRef.current.getBoundingClientRect().bottom ?? 0,
-              left: dropdownSelectRef.current.getBoundingClientRect().left ?? 0,
+                selectRef.current?.getBoundingClientRect().bottom ?? 0,
+              left: selectRef.current?.getBoundingClientRect().left ?? 0,
               width:
-                dropdownSelectRef.current.getBoundingClientRect().width ?? 0,
+                selectRef.current?.getBoundingClientRect().width ?? 0,
             }}
           >
             <li
               key="default"
-              className={styles['dropdown__option']}
+              className={styles['option']}
               onClick={() => {
                 handleOptionSelect({ name: '' });
                 setIsOpen(false);
               }}
             >
-              -
+              Все
             </li>
             {options.map((option) => (
               <li
                 key={option.id || option.name}
-                className={styles['dropdown__option']}
+                className={styles['option']}
                 onClick={() => {
                   handleOptionSelect(option);
                   setIsOpen(false);
@@ -118,4 +123,4 @@ export default function Dropdown({
       )}
     </div>
   );
-}
+};

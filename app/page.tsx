@@ -1,36 +1,16 @@
-import {TicketCard} from "@app/ui/TicketCard/TicketCard";
-import {rows, smallCols} from "@app/ui/utils";
-import {Movie} from "@app/api/types";
-import {genreTranslations} from "@app/helpers/translations";
-import {Filters} from "@app/ui/Filters/Filters";
-import styles from './page.module.css'
-import classNames from "classnames";
+import {Cinema, Movie} from "@app/api/types";
+import {MoviesClient} from "@app/MoviesClient";
 
 export default async function MoviesPage() {
-    const movies = await getMovies();
+    const cinemas = await getCinemas();
 
     return (
-        <div className={smallCols}>
-            <div className={styles['left-column']}>
-                <Filters />
-            </div>
-            <div className={classNames(rows, styles['right-column'])}>
-                {movies?.map((it) =>
-                    <TicketCard
-                        id={it.id}
-                        key={it.id}
-                        imageUrl={it.posterUrl}
-                        title={it.title}
-                        genre={genreTranslations[it.genre]}
-                    />
-                )}
-            </div>
-        </div>
+       <MoviesClient cinemas={cinemas}/>
     )
 }
 
-async function getMovies(): Promise<Movie[]> {
-    const res = await fetch('http://localhost:3001/api/movies')
+async function getCinemas(): Promise<Cinema[]> {
+    const res = await fetch('http://localhost:3001/api/cinemas')
 
     if (!res.ok) {
         throw new Error('Failed to fetch data')
