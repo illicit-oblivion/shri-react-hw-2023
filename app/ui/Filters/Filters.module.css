@@ -2,9 +2,7 @@
     font-size: var(--font-size-1);
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 20px;
 }
 
 .filters {
-    height: 100%;
 }
