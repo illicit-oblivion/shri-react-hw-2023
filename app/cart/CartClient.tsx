@@ -29,7 +29,7 @@ export const CartClient: FC<Props> = ({movies}) => {
     const onDeleteButtonClick = (id: string) => {
         setOpenModal(id);
     };
-    const closeModal = () => setOpenModal(false);
+    const closeModal = () => setOpenModal('');
 
     return (
         <div className={rows}>
